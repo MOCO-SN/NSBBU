@@ -248,8 +248,26 @@
     }
 
     @media(max-width: 1100px) {
-      .nav-links { display: none; }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #FDF6E9;
+        backdrop-filter: blur(12px);
+        padding: 1rem 2rem 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        display: none;
+        border-top: 1px solid rgba(199, 185, 160, 0.3);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+      .site-header.nav-open .nav-links { display: flex; }
+      .nav-links a { color: var(--primary); font-size: 1rem; padding: 0.75rem 0; width: 100%; text-align: left; }
+      .nav-links a::after { display: none; }
+      .nav-links a:hover, .nav-links a.active { color: var(--primary); }
       .mobile-menu-btn { display: block; }
+      .nav-btn { display: inline-block; padding: 10px 20px; font-size: 0.85rem; }
     }
 
     @media(max-width: 768px) {

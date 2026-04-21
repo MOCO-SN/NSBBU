@@ -168,15 +168,15 @@ a:focus-visible {
   border-bottom-color: var(--line);
 }
 
-.nav-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1.3rem 2.4rem;
-  display: grid;
-  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
-  align-items: center;
-  gap: 2rem;
-}
+   .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
 
 .brand {
   font-weight: 800;
@@ -230,13 +230,14 @@ a:focus-visible {
 .site-header.scrolled .nav-links a:hover,
 .site-header.scrolled .nav-links a.active { color: var(--accent); }
 
-.nav-actions { display: flex; align-items: center; gap: 20px; }
+.nav-actions {
+   display: flex; align-items: flex-end; gap: 20px; }
 .nav-actions { justify-content: flex-end; }
 
 .nav-btn {
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(12px);
-  padding: 13px 26px;
+  padding: 2px 15px 2px;
   border-radius: 999px;
   color: #fff;
   font-weight: 700;
@@ -247,6 +248,7 @@ a:focus-visible {
   cursor: pointer;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
 }
+
 .nav-btn:hover {
   background: rgba(255, 255, 255, 0.24);
   transform: translateY(-2px);

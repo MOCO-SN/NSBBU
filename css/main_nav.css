@@ -137,16 +137,20 @@
             width: 100%;
         }
 
-        .nav-btn {
-            background: var(--primary);
-            padding: 12px 28px;
-            border-radius: 4px;
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-        }
+     .nav-btn {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  padding: 2px 15px 2px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  transition: all 0.3s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.82);
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+}
 
         .mobile-menu-btn {
             display: none;
@@ -430,11 +434,66 @@
 
         @media(max-width: 900px) {
             .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #FDF6E9;
+                backdrop-filter: blur(12px);
+                padding: 1rem 2rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
                 display: none;
+                border-top: 1px solid rgba(199, 185, 160, 0.3);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            }
+
+            .site-header.nav-open .nav-links {
+                display: flex;
+            }
+
+            .nav-links a {
+                color: var(--primary);
+                font-size: 1rem;
+                padding: 0.75rem 0;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(199, 185, 160, 0.2);
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .nav-links a:hover,
+            .nav-links a.active {
+                color: var(--map-heritage);
             }
 
             .mobile-menu-btn {
                 display: block;
+                background: transparent;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                padding: 8px;
+                color: var(--primary);
+            }
+
+            .nav-actions {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .site-header .nav-btn {
+                display: inline-block;
+                background: var(--map-heritage);
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 6px;
+                font-size: 0.85rem;
+                font-weight: 600;
             }
 
             .section-head h2 {

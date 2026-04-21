@@ -84,7 +84,16 @@ a {
 .section-padding {
   padding: 6rem 8%;
 }
+.nav-actions {
+   display: flex; 
+   align-items: flex-end; 
+   gap: 20px;
+  justify-content: flex-end;
+margin-right: 10px; }
 
+#iconmain { 
+  font-size: 1.4rem;
+ }
 .section-soft {
   background-color: var(--bg-soft);
 }
@@ -101,11 +110,6 @@ a {
   margin-bottom: 3rem;
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
 
 .eyebrow {
   color: var(--accent-2);
@@ -271,16 +275,15 @@ a {
   transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-.nav-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1.3rem 2.4rem;
-  display: grid;
-  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
-  align-items: center;
-  gap: 2rem;
-}
-
+   .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
 .site-header.scrolled {
   background: rgba(255, 250, 244, 0.92);
   backdrop-filter: blur(12px);
@@ -359,7 +362,7 @@ a {
 .nav-btn {
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(12px);
-  padding: 13px 26px;
+  padding: 2px 15px 2px;
   border-radius: 999px;
   color: #fff;
   font-weight: 700;
@@ -371,9 +374,7 @@ a {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
 }
 
-.nav-actions {
-  justify-content: flex-end;
-}
+
 
 .nav-btn:hover {
   background: rgba(255, 255, 255, 0.24);
@@ -397,9 +398,10 @@ a {
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
+  position: relative;
+  margin-top: 10px;
   background: transparent;
   border: none;
-  padding: 6px;
 }
 
 .site-header.scrolled .mobile-menu-btn {
@@ -766,7 +768,7 @@ a {
 
 .destination-card {
   background: #fff;
-  border-radius: 22px;
+  border-radius: 9px;
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(31, 27, 22, 0.14);
   border: 1px solid rgba(31, 27, 22, 0.08);
@@ -851,7 +853,7 @@ a {
 
 .food-card.modern {
   background: #fff;
-  border-radius: 22px;
+  border-radius: 9px;
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(31, 27, 22, 0.14);
   border: 1px solid rgba(31, 27, 22, 0.08);
@@ -954,7 +956,7 @@ a {
 
 .festival-tile {
   background: #fff;
-  border-radius: 22px;
+  border-radius: 9px;
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(31, 27, 22, 0.14);
   border: 1px solid rgba(31, 27, 22, 0.08);
@@ -1148,7 +1150,7 @@ footer {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(18, 16, 13, 0.92);
+    /* background: rgba(18, 16, 13, 0.92); */
     backdrop-filter: blur(12px);
     padding: 1rem 2rem 1.5rem;
     flex-direction: column;
@@ -1167,11 +1169,23 @@ footer {
   }
 
   .nav-links a::after {
+
     display: none;
+  }
+  .nav-links a{
+    border: 1px transparent solid;
+  }
+  .nav-links a:hover{
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px white solid;
+    animation: alternate ease-in-out 1s;
   }
 
   .mobile-menu-btn {
     display: block;
+    position: relative;
   }
 }
 
@@ -1245,7 +1259,6 @@ footer {
   .brand {
     font-size: 1rem;
   }
-
   .nav-actions {
     gap: 10px;
   }

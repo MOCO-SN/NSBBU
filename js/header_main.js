@@ -1,0 +1,31 @@
+
+document.getElementById("header-container").innerHTML = `
+<header class="site-header" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="brand">
+      BIHAR BHARMAN
+    </a>
+
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a href="index.html" class="active" aria-current="page">Home</a>
+      <a href="/html/history.html">About</a>
+      <a href="/html/destinations.html">Explore</a>
+      <a href="/html/cuisine.html">Cuisine</a>
+      <a href="/html/festivals.html">Festivals</a>
+      <a href="/html/blogs.html">Blogs</a>
+      <a href="/html/contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="/html/plan-trip.html" class="nav-btn">Plan Now</a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="primary-nav">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+`;

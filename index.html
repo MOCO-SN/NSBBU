@@ -18,10 +18,10 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/theme.css">
   <script src="js/site.js" defer></script>
   <script src="js/onclick.js" defer></script>
 
+  <script src="js/footer_main.js" type="module"></script>
 </head>
 
 <body>
@@ -179,7 +179,7 @@
 
         <article class="destination-card" id="mithila-card">
           <div class="destination-media">
-            <img src="assets/mithila-art.png" alt="Mithila Art" loading="lazy" decoding="async">
+            <img src="https://imgs.search.brave.com/ufs7eB15vniZKKU2nmr88aYBw8kTUq0c_LpJBMZOi2Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI5/NzM5NDc0NS9waG90/by9tYWRodWJhbmkt/cGFpbnRpbmctb3It/bWl0aGlsYS1wYWlu/dGluZ3Mtb24td2Fs/bC1vZi1taXRoaWxh/LXVuaXZlcnNpdHkt/ZGFyYmhhbmdhLWJp/aGFyLWluZGlhLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1y/ZkhiNWhSQkdOSDN5/aFEtbUh6YkQ3T3JN/ZzN3SGtEVFVrOHF4/a0JlVER3PQ" alt="Mithila Art" loading="lazy" decoding="async">
           </div>
           <div class="destination-body">
             <div class="destination-label">ART &amp; CULTURE</div>
@@ -204,7 +204,7 @@
       <div class="cuisine-grid cuisine-modern">
         <article class="food-card modern" id="litti-card">
           <div class="food-media">
-            <img src="assets/litti-chokha.png" alt="Litti Chokha" loading="lazy" decoding="async">
+            <img src="https://imgs.search.brave.com/pcadG7DrV-h5s7zIx6LTVdwkyCfb5AJkTyhd-WYiDu0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA0LzI5LzIwLzM0/LzM2MF9GXzQyOTIw/MzQ5Nl81c3ZwUVFQ/Sk94M1l3UGM2YUgz/c0J5c1RmTzFKczFk/bi5qcGc" alt="Litti Chokha" loading="lazy" decoding="async">
           </div>
           <div class="food-body">
             <span class="food-tag">Smoky</span>
@@ -226,7 +226,7 @@
         </article>
         <article class="food-card modern" id="khaja-card">
           <div class="food-media">
-            <img src="assets/silao-khaja.png" alt="Silao Khaja" loading="lazy" decoding="async">
+            <img src="https://imgs.search.brave.com/F5Sn1GdAkusNpgyfNqn3o2M9JZoNq5vSr9veFRBUQkA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lYXRv/dXQtYmV0YS13cC5v/dXRsb29rdHJhdmVs/bGVyLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNS8wNS9V/bnRpdGxlZC1kZXNp/Z24tOC5qcGc" alt="Silao Khaja" loading="lazy" decoding="async">
           </div>
           <div class="food-body">
             <span class="food-tag">About</span>
@@ -298,56 +298,7 @@
     </section>
   </main>
 
-  <footer id="contact">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="brand footer-brand">
-          <i class="fas fa-map-marked-alt"></i> BIHAR BHARMAN
-        </div>
-        <p class="footer-text">Preserving heritage for future generations.</p>
-        <h4>Social Media</h4>
-        <div class="socials">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="html/index.html">Home</a></li>
-          <li><a href="html/history.html">About</a></li>
-          <li><a href="html/destinations.html">Explore</a></li>
-          <li><a href="html/cuisine.html">Cuisine</a></li>
-          <li><a href="html/festivals.html">Festivals</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Policies</h4>
-        <ul class="footer-links">
-          <li><a href="html/privacy.html">Privacy Policy</a></li>
-          <li><a href="html/terms.html">Terms of Use</a></li>
-          <li><a href="html/contact.html">Contact</a></li>
-          <li><a href="html/disclaimer.html">Disclaimer</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Newsletter</h4>
-        <p class="footer-text footer-text--spaced">Subscribe to get updates on heritage sites and events.</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your Email" required>
-          <button type="submit"><i class="fas fa-paper-plane"></i></button>
-        </form>
-      </div>
-
-    </div>
-    <div class="text-center footer-bottom">
-      &copy; 2025 Bihar Bharman. All Rights Reserved.
-    </div>
-  </footer>
-
-  
+  <div id="footer-container"></div>
 </body>
 
 </html>
