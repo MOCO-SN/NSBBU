@@ -1,25 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Bihar Bharman</title>
 
-  <meta name="description" content="Contact Bihar Bharman to plan your journey across heritage, cuisine, and festivals." />
+  <meta name="description"
+    content="Contact Bihar Bharman to plan your journey across heritage, cuisine, and festivals." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#f6efe6" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link rel="stylesheet" href="../css/contact.css">
   <link rel="stylesheet" href="../css/theme.css">
   <script src="../js/site.js" defer></script>
-
+  <script src="../js/contactphp.js" type="text/javascript"></script>
 </head>
+
 <body>
-    <header class="site-header" id="navbar">
+    <script>
+(function() {
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    function showGlassToast(message, isSuccess) {
+        const icon = isSuccess ? 'fa-check-circle' : 'fa-exclamation-circle';
+        const gradient = isSuccess 
+            ? 'linear-gradient(135deg, rgba(72,187,120,0.95), rgba(56,161,105,0.95))'
+            : 'linear-gradient(135deg, rgba(245,101,101,0.95), rgba(220,70,70,0.95))';
+        
+        const toast = document.createElement('div');
+        toast.innerHTML = `
+            <div class="toast-icon"><i class="fas ${icon}"></i></div>
+            <div class="toast-message">${escapeHtml(message)}</div>
+            <button class="toast-close">&times;</button>
+        `;
+        Object.assign(toast.style, {
+            position: 'fixed', bottom: '30px', right: '30px', maxWidth: '380px',
+            background: gradient, backdropFilter: 'blur(12px)', borderRadius: '1rem',
+            padding: '1rem 1.25rem', display: 'flex', alignItems: 'center', gap: '1rem',
+            boxShadow: '0 15px 35px rgba(0,0,0,0.3)', zIndex: '10000',
+            fontFamily: "'Poppins', sans-serif", border: '1px solid rgba(255,255,255,0.3)',
+            opacity: '0', transform: 'translateX(420px)',
+            transition: 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+        });
+        
+        if (!document.getElementById('toast-styles')) {
+            const style = document.createElement('style');
+            style.id = 'toast-styles';
+            style.textContent = `
+                .toast-icon { font-size: 1.8rem; color: white; }
+                .toast-message { flex:1; color:white; font-size:0.95rem; font-weight:500; }
+                .toast-close { background:none; border:none; color:white; font-size:1.6rem; cursor:pointer; width:28px; height:28px; border-radius:50%; }
+                .toast-close:hover { background:rgba(255,255,255,0.2); }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        document.body.appendChild(toast);
+        requestAnimationFrame(() => {
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateX(0)';
+        });
+        
+        let timeout = setTimeout(() => close(toast), 6000);
+        toast.querySelector('.toast-close').onclick = () => { clearTimeout(timeout); close(toast); };
+        toast.onmouseenter = () => clearTimeout(timeout);
+        toast.onmouseleave = () => { timeout = setTimeout(() => close(toast), 2000); };
+        
+        function close(t) {
+            t.style.opacity = '0';
+            t.style.transform = 'translateX(420px)';
+            setTimeout(() => t.remove(), 400);
+        }
+    }
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get('contact_success');
+    const error = urlParams.get('contact_error');
+    
+    if (success || error) {
+        // Clean URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+        showGlassToast(decodeURIComponent(success || error), !!success);
+    }
+})();
+</script>
+  <header class="site-header" id="navbar">
     <div class="nav-container">
       <a href="../index.html" class="brand">
         <i class="fas fa-map-marked-alt"></i>
@@ -36,7 +116,8 @@
       </nav>
       <div class="nav-actions">
         <a href="/html/plan-trip.html" class="nav-btn">Plan Now</a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation"
+          aria-expanded="false" aria-controls="primary-nav">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -49,7 +130,8 @@
       <div class="hero-content">
         <span class="hero-tag"><i class="fas fa-envelope"></i> Contact</span>
         <h1>Let’s Plan Your Bihar Journey</h1>
-        <p>Share your travel goals, and we’ll help you craft a meaningful itinerary across heritage sites, food trails, and festivals.</p>
+        <p>Share your travel goals, and we’ll help you craft a meaningful itinerary across heritage sites, food trails,
+          and festivals.</p>
       </div>
     </section>
 
@@ -91,7 +173,7 @@
           <div class="form-card">
             <h2>Send a Message</h2>
             <p>We usually respond within 24-48 hours.</p>
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" action="/php/contactfromres.php" method="POST">
               <div class="field">
                 <label for="name">Full Name</label>
                 <input id="name" name="name" type="text" placeholder="Your Name" required>
@@ -110,19 +192,16 @@
               </div>
               <div class="field full">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell us about your trip goals" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your trip goals"
+                  required></textarea>
               </div>
               <button class="submit-btn" type="submit">Send Message</button>
-              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
             </form>
           </div>
 
           <div class="map-card">
             <div class="map-frame">
-              <iframe
-                title="Patna, Bihar map"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+              <iframe title="Patna, Bihar map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 src="https://www.google.com/maps?q=Patna%2C%20Bihar%2C%20India&output=embed">
               </iframe>
             </div>
@@ -132,9 +211,9 @@
     </section>
 
     <section class="section-padding faq-section">
-      <div class="u-inline-3" >
-        <span class="u-inline-4" >FAQ</span>
-        <h2 class="u-inline-5" >Need Quick Answers?</h2>
+      <div class="u-inline-3">
+        <span class="u-inline-4">FAQ</span>
+        <h2 class="u-inline-5">Need Quick Answers?</h2>
         <p>Here are the most common questions travelers ask before planning their Bihar journey.</p>
 
         <div class="faq-grid">
@@ -144,7 +223,8 @@
           </details>
           <details class="faq-card">
             <summary>Can you customize an itinerary for families?</summary>
-            <p>Yes. We tailor routes based on age groups, mobility, and interest areas like heritage, food, or festivals.</p>
+            <p>Yes. We tailor routes based on age groups, mobility, and interest areas like heritage, food, or
+              festivals.</p>
           </details>
           <details class="faq-card">
             <summary>Do you provide transport and accommodation?</summary>
@@ -162,10 +242,10 @@
   <footer id="contact">
     <div class="footer-grid">
       <div class="footer-col">
-        <div class="brand u-inline-6" >
-<i class="fas fa-map-marked-alt" style="margin-right: 10px;"></i> BIHAR BHARMAN
+        <div class="brand u-inline-6">
+          <i class="fas fa-map-marked-alt" style="margin-right: 10px;"></i> BIHAR BHARMAN
         </div>
-        <p class="u-inline-8" >Preserving heritage for future generations.</p>
+        <p class="u-inline-8">Preserving heritage for future generations.</p>
         <h4>Social Media</h4>
         <div class="socials">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -193,7 +273,7 @@
           <li><a href="../disclaimer.html">Disclaimer</a></li>
         </ul>
       </div>
-<div class="footer-col">
+      <div class="footer-col">
         <h4>Newsletter</h4>
         <p class="footer-text footer-text--spaced">Subscribe to get updates on heritage sites and events.</p>
         <form class="newsletter-form">
@@ -202,8 +282,8 @@
         </form>
       </div>
 
-</div>
-    <div class="text-center u-inline-21" >
+    </div>
+    <div class="text-center u-inline-21">
       &copy; 2025 Bihar Bharman. All Rights Reserved.
     </div>
   </footer>
@@ -231,4 +311,5 @@
     }
   </script>
 </body>
+
 </html>
